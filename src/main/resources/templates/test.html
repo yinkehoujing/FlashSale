@@ -1,44 +1,10 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en"-->
-<!--      xmlns:th="http://www.w3.org/1999/xhtml">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <title>Test Purchase</title>-->
-<!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
-<!--</head>-->
-
-<!--<body>-->
-<!--<h2>Test Purchase</h2>-->
-
-<!--<script type="text/javascript">-->
-<!--    $(document).ready(function() {-->
-<!--        $.ajax({-->
-<!--            url: '/purchase',-->
-<!--            type: 'POST',-->
-<!--            data: {-->
-<!--                userId: 1,-->
-<!--                productId: 1,-->
-<!--                quantity: 3-->
-<!--            },-->
-<!--            success: function(result){-->
-<!--                alert(result.message);-->
-<!--            },-->
-<!--            error: function(xhr, status, error){-->
-<!--                console.error('Error:', error);-->
-<!--            }-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
-<!--</body>-->
-<!--</html>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purchase Page</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/styles.css"> <!--means files in static directory-->
 </head>
 <body>
 <h2>Purchase Product</h2>
@@ -56,6 +22,9 @@
     <button type="submit">Purchase</button>
 </form>
 
+<a href="/repo">Back to Repo</a>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('#purchaseForm').on('submit', function(event) {
