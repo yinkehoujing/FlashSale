@@ -1,4 +1,4 @@
-package com.grl.flashsale.Pojo;
+package com.grl.flashsale.pojo;
 
 import lombok.Data;
 import org.apache.ibatis.type.Alias;

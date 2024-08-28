@@ -3,7 +3,7 @@
          PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.grl.flashsale.dao.PurchaseRecordDao">
-<insert id="insertPurchaseRecord" parameterType="com.grl.flashsale.Pojo.PurchaseRecordPo">
+<insert id="insertPurchaseRecord" parameterType="com.grl.flashsale.pojo.PurchaseRecordPo">
     insert into t_purchase_record(
         user_id, product_id, price, quantity, paid, purchase_date,note
     )

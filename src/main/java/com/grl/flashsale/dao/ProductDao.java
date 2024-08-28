@@ -1,6 +1,6 @@
 package com.grl.flashsale.dao;
 
-import com.grl.flashsale.Pojo.ProductPo;
+import com.grl.flashsale.pojo.ProductPo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

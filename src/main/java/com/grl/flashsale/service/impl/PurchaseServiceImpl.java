@@ -1,7 +1,7 @@
 package com.grl.flashsale.service.impl;
 
-import com.grl.flashsale.Pojo.ProductPo;
-import com.grl.flashsale.Pojo.PurchaseRecordPo;
+import com.grl.flashsale.pojo.ProductPo;
+import com.grl.flashsale.pojo.PurchaseRecordPo;
 import com.grl.flashsale.dao.ProductDao;
 import com.grl.flashsale.dao.PurchaseRecordDao;
 import com.grl.flashsale.service.PurchaseService;
@@ -17,18 +17,19 @@ public class PurchaseServiceImpl implements PurchaseService {
     ProductDao productDao = null;
     @Override
     @Transactional
-    public boolean purchase(Long userId, Long productId, int quantity) {
+    public boolean purchase(Long userId, Long productId, int quantity, String note) {
         ProductPo product = productDao.getProduct(productId);
         if(product.getStock() < quantity) return false;
         productDao.decreaseProduct(productId, quantity);
-        PurchaseRecordPo pr = initPurchaseRecord(userId, product, quantity);
+        PurchaseRecordPo pr = initPurchaseRecord(userId, product, quantity, note);
         purchaseRecordDao.insertPurchaseRecord(pr);
         return true;
     }
 
-    private PurchaseRecordPo initPurchaseRecord(Long userId, ProductPo product, int quantity) {
+    private PurchaseRecordPo initPurchaseRecord(Long userId, ProductPo product, int quantity, String note) {
         PurchaseRecordPo pr = new PurchaseRecordPo();
-        pr.setNote("this is a note");
+        if(note == null) pr.setNote("this is a note");
+        else pr.setNote(note);
         pr.setPrice(product.getPrice());
         pr.setProductId(product.getId());
         pr.setQuantity(quantity);

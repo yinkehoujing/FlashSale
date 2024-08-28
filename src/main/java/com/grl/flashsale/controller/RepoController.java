@@ -1,10 +1,9 @@
-package com.grl.flashsale.Controller;
+package com.grl.flashsale.controller;
 
-import com.grl.flashsale.Pojo.ProductPo;
-import com.grl.flashsale.Pojo.PurchaseRecordPo;
+import com.grl.flashsale.pojo.ProductPo;
+import com.grl.flashsale.pojo.PurchaseRecordPo;
 import com.grl.flashsale.service.RepoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
